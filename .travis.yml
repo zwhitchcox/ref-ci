@@ -4,8 +4,8 @@ before_deploy:
   - git config --local user.email "zwhitchcox@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
-# deploy:
-#   provider: releases
-#   api_key: "GITHUB OAUTH TOKEN"
-#   file: "FILE TO UPLOAD"
-#   skip_cleanup: true
+deploy:
+  provider: releases
+  api_key: b4fe3c0e7893c312b57d8969cbb9e5369216a0df
+  file: my-release.sh
+  skip_cleanup: true
