@@ -13,7 +13,7 @@ jobs:
           default: true
           override: true
       - name: build
-        run: cargo build --all --release && strip target/release/$PROJECT_NAME && mv target/release/$PROJECT_NAME target/release/$PROJECT_NAME-amd64
+        run: cd $PROJECT_NAME && cargo build --all --release && strip target/release/$PROJECT_NAME && mv target/release/$PROJECT_NAME target/release/$PROJECT_NAME-amd64
         # with:
         #   env:
         #     PROJECT_NAME: ref-ci # TODO: change this to your project name
