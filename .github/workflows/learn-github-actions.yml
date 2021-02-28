@@ -14,9 +14,8 @@ jobs:
           override: true
       - name: build
         run: cd $PROJECT_NAME && cargo build --all --release && strip target/release/$PROJECT_NAME && mv target/release/$PROJECT_NAME target/release/$PROJECT_NAME-amd64
-        # with:
-        #   env:
-        #     PROJECT_NAME: ref-ci # TODO: change this to your project name
+        env:
+          PROJECT_NAME: ref-ci # TODO: change this to your project name
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
