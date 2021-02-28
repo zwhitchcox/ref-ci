@@ -14,18 +14,19 @@ matrix:
 script:
   - bash my-release.sh
 
-before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "Zane Hitchcox"
-  - git config --local user.email "zwhitchcox@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
-deploy:
-  provider: releases
-  api_key:
-    secure: "pHs9CRT8gGSsTL9CUT7VQ3f9Wc1YrcGGxkXLl+CJOE9oRRiXvLxdXkESC6vqVradfKx/THzDe4Q6QkjSkVe/vjsMlMA0nOTBM9hvUPkUUniuJeJ640wRqowNMHlMjsKV2aJ0BjcgYuK/bcmlc9VNMBu1ZE/HJiV5oLUiMxDmVmlLrkuBARv3rXl7Iu7gXEAG6YmmHxZ0Ky4w7lUlmEHhb9t6RqLm8buIDtpP8YHtMCKJvpbr+E1zeXupF4DYLglK70MKDxMDqjWyryzQWaD4FTXz3npRVJrp9RyCU8VdAss7tVSzJo9npJA3NL13a0lKbiSY8Rent81pgBaqqr8ghtfnNbJ2BeswX+CkNYds3GbkaGaCoQlvFUeVWGaLaNDOtPNKWbyw8wbAGxfaNFHnymEXHfJwrSxmMD2VYO/8cSuVp8zvZV5nqlJa0IcGKXHrr3PxUoeOQ07GwEvXXEV+lrPYwlCi+SkDBZE92Uxu6Z+BW32xJXXni2yNtUbj/gQROIa7Z9fhZawFbtxwddPBWn8Ls5ouQYUHk7CGFG781rXtuOMcMdRpvazxXXafVJi9e2P5GoCfEYDuMUZBzFDT175SIv9vmetAgnQ9Spy5pEd1dMuDpzJ1SoejmWvqUAUuNHwc2Tfy8QZpNbB1GOgnnTT7ylhnTFBIFloXTOmeUXY="
-  file: my-release.sh
-  skip_cleanup: true
+# before_deploy:
+#   # Set up git user name and tag this commit
+#   - git config --local user.name "Zane Hitchcox"
+#   - git config --local user.email "zwhitchcox@gmail.com"
+#   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+#   - git tag $TRAVIS_TAG
+
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: "pHs9CRT8gGSsTL9CUT7VQ3f9Wc1YrcGGxkXLl+CJOE9oRRiXvLxdXkESC6vqVradfKx/THzDe4Q6QkjSkVe/vjsMlMA0nOTBM9hvUPkUUniuJeJ640wRqowNMHlMjsKV2aJ0BjcgYuK/bcmlc9VNMBu1ZE/HJiV5oLUiMxDmVmlLrkuBARv3rXl7Iu7gXEAG6YmmHxZ0Ky4w7lUlmEHhb9t6RqLm8buIDtpP8YHtMCKJvpbr+E1zeXupF4DYLglK70MKDxMDqjWyryzQWaD4FTXz3npRVJrp9RyCU8VdAss7tVSzJo9npJA3NL13a0lKbiSY8Rent81pgBaqqr8ghtfnNbJ2BeswX+CkNYds3GbkaGaCoQlvFUeVWGaLaNDOtPNKWbyw8wbAGxfaNFHnymEXHfJwrSxmMD2VYO/8cSuVp8zvZV5nqlJa0IcGKXHrr3PxUoeOQ07GwEvXXEV+lrPYwlCi+SkDBZE92Uxu6Z+BW32xJXXni2yNtUbj/gQROIa7Z9fhZawFbtxwddPBWn8Ls5ouQYUHk7CGFG781rXtuOMcMdRpvazxXXafVJi9e2P5GoCfEYDuMUZBzFDT175SIv9vmetAgnQ9Spy5pEd1dMuDpzJ1SoejmWvqUAUuNHwc2Tfy8QZpNbB1GOgnnTT7ylhnTFBIFloXTOmeUXY="
+#   file: my-release.sh
+#   skip_cleanup: true
 branches:
   only:
     - master
