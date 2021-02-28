@@ -12,7 +12,8 @@ matrix:
   include:
     - env: TARGET=Hello
 script:
-  - bash my-releash.sh
+  - bash my-release.sh
+
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Zane Hitchcox"
