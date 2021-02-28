@@ -1,1 +1,1 @@
-echo This is my release!
+echo This is my release 2!
