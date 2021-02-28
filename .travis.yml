@@ -1,3 +1,11 @@
+dist: trusty
+language: rust
+services: docker
+
+sudo: required
+
+script:
+  - bash my-releash.sh
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Zane Hitchcox"
@@ -9,3 +17,10 @@ deploy:
   api_key: b4fe3c0e7893c312b57d8969cbb9e5369216a0df
   file: my-release.sh
   skip_cleanup: true
+
+branches:
+  only:
+    - master
+notifications:
+  email:
+    on_success: never
