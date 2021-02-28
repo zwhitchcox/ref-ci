@@ -18,10 +18,10 @@ jobs:
           PROJECT_NAME: ref-ci # TODO: change this to your project name
       - name: Release
         uses: softprops/action-gh-release@v1
-        # if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/$PROJECT_NAME-amd64
+            ref-ci/target/release/ref-ci-amd64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROJECT_NAME: ref-ci # TODO: change this to your project name
