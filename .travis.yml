@@ -3,7 +3,13 @@ language: rust
 services: docker
 
 sudo: required
-
+env:
+  global:
+    # TODO Update this to match the name of your project.
+    - CRATE_NAME=ref-trust-cli
+matrix:
+  include:
+    - env: TARGET=Hello
 script:
   - bash my-releash.sh
 before_deploy:
