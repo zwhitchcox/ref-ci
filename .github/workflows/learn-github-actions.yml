@@ -17,7 +17,7 @@ jobs:
         env:
           PROJECT_NAME: ref-ci # TODO: change this to your project name
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: marvinpinto/action-automatic-releases@latest
         # if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
